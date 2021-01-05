@@ -3,10 +3,10 @@ const express = require('express')
 
 const client = new Client({
     user: 'postgresadmin',
-    host: '10.96.158.44',
+    host: 'localhost',
     database: 'postgresdb',
     password: 'admin123',
-    port: 30100,
+    port: 5432,
 });
 
 const app = express()
