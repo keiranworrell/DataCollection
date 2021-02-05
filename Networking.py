@@ -4,6 +4,7 @@ from tkinter import ttk
 from functools import partial  
 from os import path
 
+# create friendly link between given characters
 def friendlyLink(c1, c2):
     char1 = (c1.get())
     char2 = (c2.get())
@@ -24,11 +25,13 @@ def friendlyLink(c1, c2):
             char2Present=True
         if (char1Present and char2Present):
             break
+    # Check if each character is present in nodes file
     if (not char1Present):
         print("Warning: {} not in nodes.csv".format(char1))
     if (not char2Present):
         print("Warning: {} not in nodes.csv".format(char2))
 
+# Create hostile link between given characters
 def hostileLink(c1, c2):
     char1 = (c1.get())
     char2 = (c2.get())
@@ -54,6 +57,7 @@ def hostileLink(c1, c2):
     if (not char2Present):
         print("Warning: {} not in nodes.csv".format(char2))
 
+# Add new character to nodes.csv
 def newNode(char, pn, gen):
     character = (char.get())
     pageNum = (pn.get())
@@ -71,6 +75,7 @@ def newNode(char, pn, gen):
             id=nodes[-1][0]+1
         nodes.append([id, character, pageNum, gender])
 
+# Write the file
 def saveFile():
     with open(nodes_path, 'w') as file:
         writer = csv.writer(file)
@@ -81,8 +86,8 @@ def saveFile():
 
 function = int(input("Data Collection (1) or Network Analysis (2)?\n"))
 
-# nodes_path = input("Path to nodes.csv (enclose path in \" marks) : ")
-# edges_path = input("Path to edges.csv (enclose path in \" marks) : ")
+nodes_path = input("Path to nodes.csv (enclose path in \" marks) : ")
+edges_path = input("Path to edges.csv (enclose path in \" marks) : ")
 
 if (path.exists(nodes_path)):
     with open(nodes_path, 'r') as f:
