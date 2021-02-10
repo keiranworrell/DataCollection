@@ -6,6 +6,9 @@ from os import path
 
 
 def unrecognisedCharacterPopUp(char):
+    print(
+        "ERROR: Cannot record interaction for unrecognised character {}".format(char1)
+    )
     win = tk.Toplevel()
     win.wm_title("Unrecognised Character: " + char)
 
@@ -38,18 +41,8 @@ def createLink(c1, c2, type):
     char1ID = getCharacterID(char1)
     char2ID = getCharacterID(char2)
     if char1ID == None:
-        print(
-            "ERROR: Cannot record interaction for unrecognised character {}".format(
-                char1
-            )
-        )
         unrecognisedCharacterPopUp(char1)
     if char2ID == None:
-        print(
-            "ERROR: Cannot record interaction for unrecognised character {}".format(
-                char2
-            )
-        )
         unrecognisedCharacterPopUp(char2)
     if char1ID == None or char2ID == None:
         return
