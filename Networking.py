@@ -97,10 +97,8 @@ def saveFile():
 
 function = int(input("Data Collection (1) or Network Analysis (2)?\n"))
 
-# nodes_path = input("Path to nodes.csv (enclose path in \" marks) : ")
-# edges_path = input("Path to edges.csv (enclose path in \" marks) : ")
-nodes_path = "/Users/keiranworrell/Documents/test/nodes.csv"
-edges_path = "/Users/keiranworrell/Documents/test/edges.csv"
+nodes_path = input('Path to nodes.csv (enclose path in " marks) : ')
+edges_path = input('Path to edges.csv (enclose path in " marks) : ')
 
 if path.exists(nodes_path):
     with open(nodes_path, "r") as f:
